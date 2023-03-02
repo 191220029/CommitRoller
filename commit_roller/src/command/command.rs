@@ -1,0 +1,46 @@
+use std::process::{self, Command, Stdio};
+
+pub fn run_command_with_output(cmd: &mut Command) -> anyhow::Result<process::Output> {
+    use anyhow::Context;
+    use crate::command::read2;
+    let mut child = cmd
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .spawn()
+        .with_context(|| format!("failed to spawn process for cmd: {:?}", cmd))?;
+
+    let mut stdout = Vec::new();
+    let mut stderr = Vec::new();
+    let mut stdout_writer = std::io::LineWriter::new(std::io::stdout());
+    let mut stderr_writer = std::io::LineWriter::new(std::io::stderr());
+    read2::read2(
+        child.stdout.take().unwrap(),
+        child.stderr.take().unwrap(),
+        &mut |is_stdout, buffer, _is_done| {
+            // Send output if trace logging is enabled
+            if log::log_enabled!(target: "raw_cargo_messages", log::Level::Trace) {
+                use std::io::Write;
+                if is_stdout {
+                    stdout_writer.write_all(&buffer[stdout.len()..]).unwrap();
+                } else {
+                    stderr_writer.write_all(&buffer[stderr.len()..]).unwrap();
+                }
+            }
+            if is_stdout {
+                stdout = buffer.clone();
+            } else {
+                stderr = buffer.clone();
+            }
+        },
+    )?;
+
+    let status = child
+        .wait()
+        .with_context(|| "failed to wait on child process")?;
+
+    Ok(process::Output {
+        status,
+        stdout,
+        stderr,
+    })
+}

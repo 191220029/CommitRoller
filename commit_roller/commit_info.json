@@ -1,0 +1,76 @@
+[
+    {
+        "title": "Deduplicate types in the generator witness",
+        "commits": ["Deduplicate generator interior types"],
+        "date": "2020-2-2"
+    },
+    {
+        "title": "Treat macros as HIR items",
+        "commits": ["Treat macros as HIR items", "Update tests"],
+        "date": "2021-8-28"
+    },
+    {
+        "title": "Enable MIR inlining",
+        "commits": ["Don't assert polymorphization has taken effect in const eval", "Amend codegen test"],
+        "date": "2022-7-3",
+        "start_date": "2022-7-1"
+    },
+    {
+        "title": "Only store a LocalDefId in some HIR nodes",
+        "commits": ["Remove useless Named trait", "Remove HirItemLike"],
+        "date": "2021-2-16"
+    },
+    {
+        "title": "Update Rust Float-Parsing Algorithms to use the Eisel-Lemire algorithm",
+        "commits": ["Changed dec2flt to use the Eisel-Lemire algorithm"],
+        "date": "2021-7-17"
+    },
+    {
+        "title": "Replace RwLock by a futex based one on Linux",
+        "commits": ["Return status from futex_wake()", "Use is_ or has_ prefix for pure `-> bool` functions"],
+        "date": "2022-4-12",
+        "start_date": "2022-4-7"
+    },
+    {
+        "title": "Replace ReentrantMutex by a futex-based one on Linux",
+        "commits": ["Add current_thread_unique_ptr() in std::sys_common", "Add missing unsafe marker"],
+        "date": "2022-4-12"
+    },
+    {
+        "title": "Use futex-based thread::park/unpark on Linux",
+        "commits": ["Move thread parker to a separate module", "Move thread parker to a separate module"],
+        "date": "2020-9-27"
+    },
+    {
+        "title": "Lazily allocate and initialize pthread locks",
+        "commits": ["Use Drop instead of destroy() for locks", "Lazily allocate+initialize locks"],
+        "date": "2022-6-4",
+        "start_date": "2022-6-3"
+    },
+    {
+        "title": "Separate projection bounds and predicates",
+        "commits": ["Rename projection_predicates to item_bounds", "Fix NLL compare mode tests"],
+        "date": "2020-10-6"
+    },
+    {
+        "title": "Invert control in struct_lint_level",
+        "commits": ["Invert control in struct_lint_level", "Fix stage2 test failures from call to span_lint"],
+        "date": "2020-2-11"
+    },
+    {
+        "title": "Improve performance of coherence checks",
+        "commits": ["Reduce queries/map lookups done by coherence", "Remove vestigial #43355-compat code"],
+        "date": "2020-2-10"
+    },
+    {
+        "title": "Miscellaneous inlining improvements",
+        "commits": ["Always inline `run_utf8_validation`", "Inline various simple `emit_*` and `read_*` methods in `Decoder`"],
+        "date": "2020-2-18"
+    },
+    {
+        "title": "Dumb NRVO",
+        "commits": ["Dumb NRVO", "Bail out if new return place has different type than old"],
+        "date": "2020-5-21",
+        "start_date": "2020-5-17"
+    }
+]

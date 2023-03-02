@@ -1,0 +1,1 @@
+/media/workstation/device/home/fxl/CommitRoller/commit_roller/target/release/commit_roller: /media/workstation/device/home/fxl/CommitRoller/commit_roller/src/cli.rs /media/workstation/device/home/fxl/CommitRoller/commit_roller/src/gitlog/mod.rs /media/workstation/device/home/fxl/CommitRoller/commit_roller/src/main.rs
