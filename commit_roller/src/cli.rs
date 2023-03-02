@@ -21,8 +21,11 @@ pub enum Commands {
         out: PathBuf
     },
     RollBack {
+        #[clap(long = "repo-dir")]
+        repo_dir: PathBuf,
+
         #[clap(long = "commit_id_json")]
-        commit_id_json: PathBuf,
+        commit_context_json: PathBuf,
 
         #[clap(long = "out-dir")]
         out_dir: PathBuf

@@ -1,0 +1,72 @@
+[
+    {
+        "hash_cur": "791123d2c4c",
+        "hash_old": "847d5b4d138",
+        "title": "Deduplicate types in the generator witness"
+    },
+    {
+        "hash_cur": "b5a41418f84",
+        "hash_old": "bf2f6656bca",
+        "title": "Treat macros as HIR items"
+    },
+    {
+        "hash_cur": "cbbf06b0cd3",
+        "hash_old": "6177a4f5930",
+        "title": "Enable MIR inlining"
+    },
+    {
+        "hash_cur": "91d8e59ccaa",
+        "hash_old": "8192793d505",
+        "title": "Only store a LocalDefId in some HIR nodes"
+    },
+    {
+        "hash_cur": "8752b403695",
+        "hash_old": "db1e49257e8",
+        "title": "Update Rust Float-Parsing Algorithms to use the Eisel-Lemire algorithm"
+    },
+    {
+        "hash_cur": "83393817419",
+        "hash_old": "f2bbb5fac0b",
+        "title": "Replace RwLock by a futex based one on Linux"
+    },
+    {
+        "hash_cur": "d4e44a63910",
+        "hash_old": "4e1927db3c3",
+        "title": "Replace ReentrantMutex by a futex-based one on Linux"
+    },
+    {
+        "hash_cur": "1464fc3a0cb",
+        "hash_old": "e4200512ff9",
+        "title": "Use futex-based thread::park/unpark on Linux"
+    },
+    {
+        "hash_cur": "6a417d48289",
+        "hash_old": "2a60b8452e4",
+        "title": "Lazily allocate and initialize pthread locks"
+    },
+    {
+        "hash_cur": "69fc6d8c5c2",
+        "hash_old": "5849a7eca90",
+        "title": "Separate projection bounds and predicates"
+    },
+    {
+        "hash_cur": "b959da2f4cd",
+        "hash_old": "f55d74dc0df",
+        "title": "Invert control in struct_lint_level"
+    },
+    {
+        "hash_cur": "23095928a7e",
+        "hash_old": "840bdc349d2",
+        "title": "Improve performance of coherence checks"
+    },
+    {
+        "hash_cur": "e761f3af904",
+        "hash_old": "0933314bffe",
+        "title": "Miscellaneous inlining improvements"
+    },
+    {
+        "hash_cur": "f5098620575",
+        "hash_old": "1d09a7b6933",
+        "title": "Dumb NRVO"
+    }
+]

@@ -155,9 +155,7 @@ fn write_context(out: &PathBuf, contexts: Vec<LogContext>) -> anyhow::Result<()>
     let fptr = File::create(out)?;
     let mut writer = BufWriter::new(fptr);
 
-    for context in &contexts {
-        writer.write(serde_json::to_string(context)?.as_bytes())?;
-    };
+    writer.write(serde_json::to_string(&contexts)?.as_bytes())?;
 
     Ok(())
 }

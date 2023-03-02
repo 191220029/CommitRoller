@@ -1,5 +1,5 @@
 use clap::Parser;
-use roller::gitlog::find_commits;
+use roller::{gitlog::find_commits, stash::stash_all};
 
 use crate::cli::Cli;
 
@@ -18,10 +18,11 @@ fn main() {
             find_commits(&repo_dir, &commits_json, &out);
         },
         cli::Commands::RollBack { 
-            commit_id_json, 
-            out_dir 
+            repo_dir, 
+            commit_context_json, 
+            out_dir,
         } => {
-            
+            stash_all(&repo_dir, &out_dir, &commit_context_json);
         },
     }
 }
