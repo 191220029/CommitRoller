@@ -1,11 +1,11 @@
 use clap::Parser;
-use gitlog::find_commits;
+use roller::gitlog::find_commits;
 
 use crate::cli::Cli;
 
-mod gitlog;
 mod cli;
 mod command;
+mod roller;
 
 fn main() {
     let args = Cli::parse();

@@ -1,4 +1,4 @@
-use std::{path::PathBuf, process::Command, fs::File, io::{BufReader, BufRead}};
+use std::{path::PathBuf, process::Command, fs::File, io::{BufReader, BufRead, Write, BufWriter}};
 
 use chrono::{DateTime, Datelike, Duration, FixedOffset, Utc, TimeZone, Local};
 use serde::{Serialize, Deserialize};
@@ -15,15 +15,17 @@ struct Gitlog {
 }
 
 #[derive(Serialize, Debug)]
-struct LogContext{
-    hash_cur: String,
-    hash_old: String,
-    title: String
+pub struct LogContext{
+    pub hash_cur: String,
+    pub hash_old: String,
+    pub title: String
 }
 
 
 
 pub fn find_commits(repo_dir: &PathBuf, commits_json: &PathBuf, out: &PathBuf) {
+    let mut contexts = vec![];
+
     let logs = match parse_commit_json(commits_json) {
         Ok(logs) => logs,
         Err(err) => {
@@ -64,12 +66,19 @@ pub fn find_commits(repo_dir: &PathBuf, commits_json: &PathBuf, out: &PathBuf) {
             }
         ) {
             Ok(context) => {
-                println!("{:?}", &context);
+                contexts.push(context);
             },
             Err(err) => {
                 eprintln!("Fail to find context commit log for {}\n{}", log.title, err);                    
                 continue;
             }
+        }
+    }
+
+    match write_context(out, contexts){
+        Ok(()) => (),
+        Err(err) => {
+            eprintln!("Fail to write commit contexts to file {:?}\n{}", out, err);
         }
     }
 }
@@ -140,6 +149,17 @@ fn get_context_log(repo_dir: &PathBuf, title: &String, commit_titles: &Vec<Strin
         hash_old: String::from(old_commit_hash),
         title: title.clone()
     })
+}
+
+fn write_context(out: &PathBuf, contexts: Vec<LogContext>) -> anyhow::Result<()> {
+    let fptr = File::create(out)?;
+    let mut writer = BufWriter::new(fptr);
+
+    for context in &contexts {
+        writer.write(serde_json::to_string(context)?.as_bytes())?;
+    };
+
+    Ok(())
 }
 
 #[test]
