@@ -1,4 +1,4 @@
-use std::{path::{PathBuf, Path}, fs::File, io::BufReader};
+use std::{path::{PathBuf, Path}, fs::{File, create_dir_all}, io::BufReader};
 
 use anyhow::Context;
 
@@ -35,7 +35,9 @@ fn parse_commit_context_json(commit_context_json: &PathBuf) -> anyhow::Result<Ve
 }
 
 fn copy_repo(repo_dir: &PathBuf, out_dir: &PathBuf, context: &LogContext) -> anyhow::Result<(PathBuf, PathBuf)> {
-    
+    let out_dir = out_dir.join(&context.title);
+
+    create_dir_all(&out_dir)?;
 
     let new_repo = out_dir.join(context.hash_cur.clone() + "_cur");
     let old_repo = out_dir.join(context.hash_old.clone() + "_old");
