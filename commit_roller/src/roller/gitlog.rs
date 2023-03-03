@@ -14,7 +14,7 @@ struct Gitlog {
     start_date: Option<String>
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct LogContext{
     pub hash_cur: String,
     pub hash_old: String,
@@ -97,7 +97,7 @@ fn get_context_log(repo_dir: &PathBuf, title: &String, commit_titles: &Vec<Strin
         Some(start_date) => last_day = start_date - Duration::days(1),
         None => last_day = date - Duration::days(1)
     }
-    let next_day = date + Duration::days(1);
+    // let next_day = date + Duration::days(1);
 
     let mut cmd = Command::new("git");
     cmd.current_dir(repo_dir)
@@ -161,7 +161,7 @@ fn write_context(out: &PathBuf, contexts: Vec<LogContext>) -> anyhow::Result<()>
 }
 
 #[test]
-fn test() {
+fn test_find_commits() {
     find_commits(
         &PathBuf::from("/media/workstation/device/home/fxl/rustc/rust"),
         &PathBuf::from("/media/workstation/device/home/fxl/CommitRoller/commit_roller/commit_info.json"),

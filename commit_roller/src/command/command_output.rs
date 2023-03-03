@@ -44,3 +44,18 @@ pub fn run_command_with_output(cmd: &mut Command) -> anyhow::Result<process::Out
         stderr,
     })
 }
+
+pub fn command_output(cmd: &mut Command) -> anyhow::Result<process::Output> {
+    let output = run_command_with_output(cmd)?;
+
+    if !output.status.success() {
+        return Err(anyhow::anyhow!(
+            "expected success, got {}\n\nstderr={}\n\n stdout={}\n",
+            output.status,
+            String::from_utf8_lossy(&output.stderr),
+            String::from_utf8_lossy(&output.stdout)
+        ));
+    }
+
+    Ok(output)
+}

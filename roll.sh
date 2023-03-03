@@ -1,0 +1,1 @@
+./commit_roller/target/release/commit_roller roll_back --repo-dir /media/workstation/device/home/fxl/rustc/rust --commit_id_json /media/workstation/device/home/fxl/CommitRoller/commit_roller/out/commit_context.json --out-dir /media/workstation/disk/fxl/rust
