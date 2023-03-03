@@ -3,7 +3,7 @@ use std::{path::PathBuf, process::Command, fs::File, io::{BufReader, BufRead, Wr
 use chrono::{DateTime, Datelike, Duration, FixedOffset, Utc, TimeZone, Local};
 use serde::{Serialize, Deserialize};
 
-use crate::command::command::run_command_with_output;
+use crate::command::command_output::run_command_with_output;
 
 #[derive(Deserialize, Debug)]
 struct Gitlog {

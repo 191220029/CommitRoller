@@ -1,9 +1,7 @@
 use clap::Parser;
+use command::cli::{Cli, self};
 use roller::{gitlog::find_commits, stash::stash_all};
 
-use crate::cli::Cli;
-
-mod cli;
 mod command;
 mod roller;
 
