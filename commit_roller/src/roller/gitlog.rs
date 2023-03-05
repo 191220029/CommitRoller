@@ -1,9 +1,9 @@
-use std::{path::PathBuf, process::Command, fs::File, io::{BufReader, BufRead, Write, BufWriter}};
+use std::{path::PathBuf, process::Command, fs::File, io::{BufReader, Write, BufWriter}};
 
-use chrono::{DateTime, Datelike, Duration, FixedOffset, Utc, TimeZone, Local};
+use chrono::{DateTime, Datelike, Duration, TimeZone, Local};
 use serde::{Serialize, Deserialize};
 
-use crate::command::command_output::run_command_with_output;
+use crate::command::command_output::command_output;
 
 #[derive(Deserialize, Debug)]
 struct Gitlog {
@@ -110,7 +110,7 @@ fn get_context_log(repo_dir: &PathBuf, title: &String, commit_titles: &Vec<Strin
         
     // println!("searching {}, commits{:?}, cmd = {:?}", title, commit_titles, &cmd);
 
-    let output = match run_command_with_output(&mut cmd){
+    let output = match command_output(&mut cmd){
         Ok(output) => output,
         Err(err) => return Err(err),
     };

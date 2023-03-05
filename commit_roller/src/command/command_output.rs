@@ -1,6 +1,6 @@
 use std::process::{self, Command, Stdio};
 
-pub fn run_command_with_output(cmd: &mut Command) -> anyhow::Result<process::Output> {
+fn run_command_with_output(cmd: &mut Command) -> anyhow::Result<process::Output> {
     use anyhow::Context;
     use crate::command::read2;
     let mut child = cmd

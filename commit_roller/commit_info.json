@@ -37,7 +37,7 @@
         "date": "2022-4-12"
     },
     {
-        "title": "Use futex-based thread::park/unpark on Linux",
+        "title": "Use futex-based park and unspark on Linux",
         "commits": ["Move thread parker to a separate module", "Move thread parker to a separate module"],
         "date": "2020-9-27"
     },
