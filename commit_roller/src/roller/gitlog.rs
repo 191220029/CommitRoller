@@ -21,8 +21,6 @@ pub struct LogContext{
     pub title: String
 }
 
-
-
 pub fn find_commits(repo_dir: &PathBuf, commits_json: &PathBuf, out: &PathBuf) {
     let mut contexts = vec![];
 
