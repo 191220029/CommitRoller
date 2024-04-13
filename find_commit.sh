@@ -1,0 +1,1 @@
+./commit_roller/target/release/commit_roller find_commit --repo-dir ../rustc/baseline/ --commits-json commit_roller/commit_info_new.json --out commit_roller/out/commit_context_new.json

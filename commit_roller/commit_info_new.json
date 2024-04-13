@@ -1,0 +1,60 @@
+[
+    {
+        "title": "Add new MIR constant propagation based on dataflow analysis",
+        "commits": ["Add initial version of value analysis and dataflow constant propagation", "Bless graphviz tests"],
+        "start_date": "2022-11-7",
+        "date": "2022-11-15"
+    },
+    {
+        "title": "More derive output improvements",
+        "commits": ["Add a union to the `deriving-all-codegen.rs` test", "Inline and remove the `cs_fold_*` functions"],
+        "start_date": "2022-7-4",
+        "date": "2022-7-5"
+    },
+    {
+        "title": "Improve derive_Debug",
+        "commits": ["Rename some `ExtCtxt` methods", "Rewrite `TyKind::fmt`"],
+        "start_date": "2022-6-23",
+        "date": "2022-6-24"
+    },
+    {
+        "title": "Dont use match-destructuring for derived ops on structs",
+        "commits": ["Add an interesting case to the `deriving-all-codegen.rs` test", "Don't use match-destructuring for derived ops on structs"],
+        "date": "2022-7-4"
+    },
+    {
+        "title": "Replace dominators algorithm with simple Lengauer-Tarjan",
+        "commits": ["Implement the simple Lengauer-Tarjan algorithm", "Annotate comments onto the LT algorithm"],
+        "date": "2021-12-7"
+    },
+    {
+        "title": "rustc_metadata Encode list of all crates traits into metadata",
+        "commits": ["rustc_metadata: Encode list of all crate's traits into metadata", "rustc_metadata: Encode list of all crate's traits into metadata"],
+        "date": "2021-12-30",
+        "start_date": "2021-12-27"
+    },
+    {
+        "title": "Remove visible path calculation from allowed deprecation lint",
+        "commits": ["Remove visible path calculation from allowed deprecation lint", "Remove visible path calculation from allowed deprecation lint"],
+        "date": "2021-10-1",
+        "start_date": "2021-9-30"
+    },
+    {
+        "title": "Simplify lazy DefPathHash decoding by using an on-disk hash table",
+        "commits": ["Allow taking an OwningRef of the crate metadata blob.", "Update odht to 0.2.1"],
+        "date": "2021-9-19",
+        "start_date": "2021-9-14"
+    },
+    {
+        "title": "Limit symbols exported from proc macros",
+        "commits": ["Limit symbols exported from proc macros", "Add issue reference"],
+        "date": "2022-8-1",
+        "start_date": "2022-7-30"
+    },
+    {
+        "title": "optimize field ordering by grouping m*2^n-sized fields with equivalently aligned ones",
+        "commits": ["optimize field ordering by grouping power-of-two arrays with larger", "add tests for field ordering optimization"],
+        "date": "2022-11-24",
+        "start_date": "2022-11-23"
+    }
+]

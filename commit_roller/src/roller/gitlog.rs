@@ -139,6 +139,14 @@ fn get_context_log(repo_dir: &PathBuf, title: &String, commit_titles: &Vec<Strin
         line = iter.next();   
     };
 
+    if cur_commit_hash.len() <= 0 {
+        eprintln!("Fail to find commit hash for {}-{}", title, cur_commit_title);
+    }
+
+    if old_commit_hash.len() <= 0 {
+        eprintln!("Fail to find commit hash for {}-{}", title, old_commit_title);
+    }
+    
     assert!(cur_commit_hash.len() > 0);
     assert!(old_commit_hash.len() > 0);
 

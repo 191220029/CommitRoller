@@ -1,0 +1,52 @@
+[
+    {
+        "hash_cur": "24d2e903df2",
+        "hash_old": "780952f922a",
+        "title": "Add new MIR constant propagation based on dataflow analysis"
+    },
+    {
+        "hash_cur": "0da063c9916",
+        "hash_old": "8deadfa2713",
+        "title": "More derive output improvements"
+    },
+    {
+        "hash_cur": "20f0cdaa635",
+        "hash_old": "b96ae9b2044",
+        "title": "Improve derive(Debug)"
+    },
+    {
+        "hash_cur": "ecc6e95ed44",
+        "hash_old": "b15f06e74f1",
+        "title": "Don't use match-destructuring for derived ops on structs"
+    },
+    {
+        "hash_cur": "15483ccf9d0",
+        "hash_old": "9ae3158292a",
+        "title": "Replace dominators algorithm with simple Lengauer-Tarjan"
+    },
+    {
+        "hash_cur": "90e371027ea",
+        "hash_old": "526fb6b7eaf",
+        "title": "rustc_metadata: Encode list of all crate's traits into metadata"
+    },
+    {
+        "hash_cur": "d98ac573a4d",
+        "hash_old": "4babfae9cba",
+        "title": "Remove visible path calculation from allowed deprecation lint"
+    },
+    {
+        "hash_cur": "4d151d92dea",
+        "hash_old": "e84996bd7f1",
+        "title": "Simplify lazy DefPathHash decoding by using an on-disk hash table"
+    },
+    {
+        "hash_cur": "b87f8a4d9c5",
+        "hash_old": "437b441ff5e",
+        "title": "Limit symbols exported from proc macros"
+    },
+    {
+        "hash_cur": "c1f392dbc09",
+        "hash_old": "1c80a5655f6",
+        "title": "optimize field ordering by grouping m*2^n-sized fields with equivalently aligned ones"
+    }
+]
